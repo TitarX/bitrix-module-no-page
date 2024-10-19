@@ -13,6 +13,11 @@ class MiscHelper
         return 'digitmind.emailparser';
     }
 
+    public static function getModuleRootPath(): string
+    {
+        return realpath(__DIR__ . '/../..');
+    }
+
     public static function getAssetsPath(string $type): string
     {
         $moduleId = self::getModuleId();

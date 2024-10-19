@@ -182,6 +182,24 @@ class digitmind_emailparser extends CModule
     function RegisterEvents()
     {
         EventManager::getInstance()->registerEventHandler(
+            'main',
+            'OnPageStart',
+            $this->MODULE_ID,
+            'DigitMind\EmailParser\Events\PageEvents',
+            'onPageStart',
+            1000
+        );
+
+        EventManager::getInstance()->registerEventHandler(
+            'main',
+            'OnEndBufferContent',
+            $this->MODULE_ID,
+            'DigitMind\EmailParser\Events\PageEvents',
+            'onEndBufferContent',
+            1000
+        );
+
+        EventManager::getInstance()->registerEventHandler(
             'mail',
             'onMailMessageNew',
             $this->MODULE_ID,
@@ -193,6 +211,22 @@ class digitmind_emailparser extends CModule
 
     function UnRegisterEvents()
     {
+        EventManager::getInstance()->unRegisterEventHandler(
+            'main',
+            'OnPageStart',
+            $this->MODULE_ID,
+            'DigitMind\EmailParser\Events\PageEvents',
+            'onPageStart'
+        );
+
+        EventManager::getInstance()->unRegisterEventHandler(
+            'main',
+            'OnEndBufferContent',
+            $this->MODULE_ID,
+            'DigitMind\EmailParser\Events\PageEvents',
+            'onEndBufferContent'
+        );
+
         EventManager::getInstance()->unRegisterEventHandler(
             'mail',
             'onMailMessageNew',

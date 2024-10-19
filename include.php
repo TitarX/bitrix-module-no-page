@@ -7,6 +7,7 @@ use Bitrix\Main\Loader;
 Loader::registerAutoloadClasses(
     'digitmind.emailparser',
     [
+        'DigitMind\EmailParser\Events\PageEvents' => 'lib/events/PageEvents.php',
         'DigitMind\EmailParser\Events\MailEvents' => 'lib/events/MailEvents.php',
         'DigitMind\EmailParser\Entities\OptionsTable' => 'lib/entities/OptionsTable.php',
         'DigitMind\EmailParser\Helpers\MiscHelper' => 'lib/helpers/MiscHelper.php',
