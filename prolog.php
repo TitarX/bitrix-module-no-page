@@ -1,3 +1,3 @@
 <?php
 
-define('ADMIN_MODULE_NAME', 'digitmind.emailparser');
+define('ADMIN_MODULE_NAME', 'digitmind.nopage');

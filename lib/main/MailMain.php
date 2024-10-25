@@ -1,6 +1,6 @@
 <?php
 
-namespace DigitMind\EmailParser\Main;
+namespace DigitMind\NoPage\Main;
 
 class MailMain
 {

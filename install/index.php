@@ -9,15 +9,15 @@ use Bitrix\Main\IO\Directory;
 
 Loc::loadMessages(__FILE__);
 
-class digitmind_emailparser extends CModule
+class digitmind_nopage extends CModule
 {
     var $exclusionAdminFiles;
 
     function __construct()
     {
-        $this->MODULE_ID = 'digitmind.emailparser';
-        $this->MODULE_NAME = Loc::getMessage('DIGITMIND_EMAILPARSER_MODULE_NAME');
-        $this->MODULE_DESCRIPTION = Loc::getMessage('DIGITMIND_EMAILPARSER_MODULE_DESCRIPTION');
+        $this->MODULE_ID = 'digitmind.nopage';
+        $this->MODULE_NAME = Loc::getMessage('DIGITMIND_NOPAGE_MODULE_NAME');
+        $this->MODULE_DESCRIPTION = Loc::getMessage('DIGITMIND_NOPAGE_MODULE_DESCRIPTION');
 
         $this->PARTNER_NAME = '';
         $this->PARTNER_URI = '';
@@ -48,7 +48,7 @@ class digitmind_emailparser extends CModule
         $errors = '';
 
         if (!ModuleManager::isModuleInstalled('mail')) {
-            $errors = Loc::getMessage('DIGITMIND_EMAILPARSER_MODULE_NOT_INSTALLED_MAIL');
+            $errors = Loc::getMessage('DIGITMIND_NOPAGE_MODULE_NOT_INSTALLED_MAIL');
         } else {
             $documentRoot = Application::getDocumentRoot();
             $this->copyFiles($documentRoot);
@@ -61,7 +61,7 @@ class digitmind_emailparser extends CModule
         }
 
         $APPLICATION->IncludeAdminFile(
-            Loc::getMessage('DIGITMIND_EMAILPARSER_MODULE_INSTALL'),
+            Loc::getMessage('DIGITMIND_NOPAGE_MODULE_INSTALL'),
             __DIR__ . '/step.php'
         );
     }
@@ -82,7 +82,7 @@ class digitmind_emailparser extends CModule
         ModuleManager::unRegisterModule($this->MODULE_ID);
 
         $APPLICATION->IncludeAdminFile(
-            Loc::getMessage('DIGITMIND_EMAILPARSER_MODULE_UNINSTALL'),
+            Loc::getMessage('DIGITMIND_NOPAGE_MODULE_UNINSTALL'),
             __DIR__ . '/unstep.php'
         );
     }
@@ -111,7 +111,7 @@ class digitmind_emailparser extends CModule
 
         $documentRoot = Application::getDocumentRoot();
         $errors = $DB->RunSQLBatch(
-            "{$documentRoot}/bitrix/modules/digitmind.emailparser/install/db/" . strtolower($DB->type) . '/install.sql'
+            "{$documentRoot}/bitrix/modules/digitmind.nopage/install/db/" . strtolower($DB->type) . '/install.sql'
         );
         if (!empty($errors)) {
             $APPLICATION->ThrowException(implode('. ', $errors));
@@ -129,7 +129,7 @@ class digitmind_emailparser extends CModule
 
         $documentRoot = Application::getDocumentRoot();
         $errors = $DB->RunSQLBatch(
-            "{$documentRoot}/bitrix/modules/digitmind.emailparser/install/db/" . strtolower($DB->type) . '/uninstall.sql'
+            "{$documentRoot}/bitrix/modules/digitmind.nopage/install/db/" . strtolower($DB->type) . '/uninstall.sql'
         );
         if (!empty($errors)) {
             $APPLICATION->ThrowException(implode('. ', $errors));
@@ -185,7 +185,7 @@ class digitmind_emailparser extends CModule
             'main',
             'OnPageStart',
             $this->MODULE_ID,
-            'DigitMind\EmailParser\Events\PageEvents',
+            'DigitMind\NoPage\Events\PageEvents',
             'onPageStart',
             1000
         );
@@ -194,7 +194,7 @@ class digitmind_emailparser extends CModule
             'main',
             'OnEndBufferContent',
             $this->MODULE_ID,
-            'DigitMind\EmailParser\Events\PageEvents',
+            'DigitMind\NoPage\Events\PageEvents',
             'onEndBufferContent',
             1000
         );
@@ -203,7 +203,7 @@ class digitmind_emailparser extends CModule
             'mail',
             'onMailMessageNew',
             $this->MODULE_ID,
-            'DigitMind\EmailParser\Events\MailEvents',
+            'DigitMind\NoPage\Events\MailEvents',
             'onMailMessageNew',
             1000
         );
@@ -215,7 +215,7 @@ class digitmind_emailparser extends CModule
             'main',
             'OnPageStart',
             $this->MODULE_ID,
-            'DigitMind\EmailParser\Events\PageEvents',
+            'DigitMind\NoPage\Events\PageEvents',
             'onPageStart'
         );
 
@@ -223,7 +223,7 @@ class digitmind_emailparser extends CModule
             'main',
             'OnEndBufferContent',
             $this->MODULE_ID,
-            'DigitMind\EmailParser\Events\PageEvents',
+            'DigitMind\NoPage\Events\PageEvents',
             'onEndBufferContent'
         );
 
@@ -231,7 +231,7 @@ class digitmind_emailparser extends CModule
             'mail',
             'onMailMessageNew',
             $this->MODULE_ID,
-            'DigitMind\EmailParser\Events\MailEvents',
+            'DigitMind\NoPage\Events\MailEvents',
             'onMailMessageNew'
         );
     }
@@ -241,7 +241,7 @@ class digitmind_emailparser extends CModule
         return [
             "reference_id" => ['D'],
             "reference" => [
-                '[D] ' . Loc::getMessage('DIGITMIND_EMAILPARSER_RIGHT_DENIED')
+                '[D] ' . Loc::getMessage('DIGITMIND_NOPAGE_RIGHT_DENIED')
             ]
         ];
     }

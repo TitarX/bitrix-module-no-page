@@ -3,9 +3,9 @@
  * Параметры, константы приложения
  */
 
-namespace DigitMind\EmailParser\Main;
+namespace DigitMind\NoPage\Main;
 
-use DigitMind\EmailParser\Helpers\MiscHelper;
+use DigitMind\NoPage\Helpers\MiscHelper;
 
 class Parameters
 {

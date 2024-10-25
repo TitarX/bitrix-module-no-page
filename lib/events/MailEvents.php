@@ -1,11 +1,11 @@
 <?php
 
-namespace DigitMind\EmailParser\Events;
+namespace DigitMind\NoPage\Events;
 
 use Bitrix\Main\Loader;
 use Bitrix\Main\Event;
 
-Loader::includeModule('digitmind.emailparser');
+Loader::includeModule('digitmind.nopage');
 
 class MailEvents
 {

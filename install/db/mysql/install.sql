@@ -1,4 +1,4 @@
-create table if not exists digitmind_emailparser_options
+create table if not exists digitmind_nopage_options
 (
     `ID` int not null auto_increment,
     `CODE` varchar(255) not null,

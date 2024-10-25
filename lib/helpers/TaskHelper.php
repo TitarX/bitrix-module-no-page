@@ -1,6 +1,6 @@
 <?php
 
-namespace DigitMind\EmailParser\Helpers;
+namespace DigitMind\NoPage\Helpers;
 
 use Bitrix\Main\Loader;
 use Bitrix\Main\LoaderException;

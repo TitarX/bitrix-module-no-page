@@ -1,6 +1,6 @@
 <?php
 
-namespace DigitMind\EmailParser\Entities;
+namespace DigitMind\NoPage\Entities;
 
 use Bitrix\Main\ArgumentException;
 use Bitrix\Main\Entity;
@@ -19,7 +19,7 @@ class OptionsTable extends Entity\DataManager
      */
     public static function getTableName(): string
     {
-        return 'digitmind_emailparser_options';
+        return 'digitmind_nopage_options';
     }
 
     /**

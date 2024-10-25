@@ -1,6 +1,6 @@
 <?php
 
-namespace DigitMind\EmailParser\Helpers;
+namespace DigitMind\NoPage\Helpers;
 
 use Bitrix\Main\Application;
 use Bitrix\Main\Config\Option;
@@ -10,7 +10,7 @@ class MiscHelper
 {
     public static function getModuleId(): string
     {
-        return 'digitmind.emailparser';
+        return 'digitmind.nopage';
     }
 
     public static function getModuleRootPath(): string
