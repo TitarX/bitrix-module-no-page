@@ -9,7 +9,7 @@ Loader::registerAutoloadClasses(
     [
         'DigitMind\NoPage\Events\PageEvents' => 'lib/events/PageEvents.php',
         'DigitMind\NoPage\Events\MailEvents' => 'lib/events/MailEvents.php',
-        'DigitMind\NoPage\Entities\OptionsTable' => 'lib/entities/OptionsTable.php',
+        'DigitMind\NoPage\Entities\OptionTable' => 'lib/entities/OptionTable.php',
         'DigitMind\NoPage\Helpers\MiscHelper' => 'lib/helpers/MiscHelper.php',
         'DigitMind\NoPage\Helpers\TaskHelper' => 'lib/helpers/TaskHelper.php',
         'DigitMind\NoPage\Main\MailMain' => 'lib/main/MailMain.php',
